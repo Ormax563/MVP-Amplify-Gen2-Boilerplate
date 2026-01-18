@@ -3,7 +3,15 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "install:front": "npm install --workspace=apps/main-site",
+    "install:back": "npm install --workspace=packages/amplify-backend",
+    "dev:front": "npm run dev --workspace=apps/main-site",
+    "build:front": "npm run build --workspace=apps/main-site",
+    "lint:front": "npm run lint --workspace=apps/main-site",
+    "preview": "npm run preview --workspace=apps/main-site",
+    "clean": "rm -rf node_modules apps/*/node_modules packages/*/node_modules apps/*/dist apps/*/.vite",
+    "dev:backend": "cd packages/amplify-backend && npx ampx sandbox",
+    "dev:deletebackend": "cd packages/amplify-backend && npx ampx sandbox delete"
   },
   "keywords": [],
   "author": "",
